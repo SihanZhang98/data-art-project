@@ -11,7 +11,7 @@ from random import randint
 
 
 # generation parameters (CAN CHANGE)
-num_pics = 5
+num_pics = 3
 num_rect = randint(5, 15)
 canvas_width = 20
 canvas_height = 20
@@ -22,7 +22,7 @@ increments = 80
 for count in range(num_pics): 
 
 # Basic vision
-    visual = Image.open(r'D:\Python\AutoSceenshot\blank.jpg')                      # must feed in blank, black canvas image as input (blank.png)
+    visual = Image.open(r'D:\Python\data_project\blank.jpg')                      # must feed in blank, black canvas image as input (blank.png)
     draw = ImageDraw.Draw(visual)
 
 
@@ -60,6 +60,7 @@ for count in range(num_pics):
         top_left = (i[0]-(i[2]/2.0),i[1]-(i[3]/2.0))
         bottom_right = (i[0]+(i[2]/2.0),i[1]+(i[3]/2.0))
         draw.rectangle((top_left,bottom_right), fill='white')
-        visual.save(f"output{count}.png")
+        visual.save(f"op{count}.png")
+        
 
 print("finish!")

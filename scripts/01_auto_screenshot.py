@@ -3,9 +3,9 @@ from PIL import ImageGrab
 import os
 
 d1 = datetime.date.today()
-end_h = 10
-end_m= 15
-base_dir = "D:\Pics"
+end_h = 13
+end_m= 28
+base_dir = r"D:\Python\data_project\screenshots"
 
 endTime = datetime.datetime(2023,d1.month,d1.day,end_h,end_m)
 num=0
@@ -14,7 +14,8 @@ while datetime.datetime.now()<endTime:
     time.sleep(10)
     img_new = ImageGrab.grab()
     if img!=img_new:
-        img_new.save(os.path.join(base_dir,str(num)+".png"))
+        curr_datetime = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+        img_new.save(os.path.join(base_dir,curr_datetime)+".png")
         print("ok"+str(num))
         num+=1
 
